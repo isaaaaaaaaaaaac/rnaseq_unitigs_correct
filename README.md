@@ -20,7 +20,7 @@ To install `rnaseq_unitigs_correct`, simply do the following:
 The script to run is `src\rnaseq_unitigs_correct.sh`. Here is an simple example of a run, from the root of the repository:
     
     cd rnaseq_unitigs_correct
-    bash src/run.sh -in ../SRR066468.unitigs.fa.gz -minia ../minia -kat ../miniconda3/bin/kat -k 31
+    bash src/rnaseq_unitigs_correct.sh -in ../SRR066468.unitigs.fa.gz -minia ../minia -kat ../miniconda3/bin/kat -k 31
 
 
 The script's parameters are the following ones:
