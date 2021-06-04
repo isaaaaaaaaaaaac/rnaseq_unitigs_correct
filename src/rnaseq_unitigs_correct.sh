@@ -2,11 +2,10 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-n=3
 k=31
 t=8
 python="python3"
-output="$SCRIPT_DIR/script_output"
+output="$SCRIPT_DIR/../script_output"
 
 while test $# -gt 0; do
     case "$1" in
@@ -61,16 +60,6 @@ while test $# -gt 0; do
             output=$1
         else
             echo "No output directory provided (-output)"
-            exit 1
-        fi
-        shift
-        ;;
-    -n)
-        shift
-        if test $# -gt 0; then
-            n=$1
-        else
-            echo "No value provided for n (-n)"
             exit 1
         fi
         shift
@@ -193,7 +182,7 @@ echo
 
 
 
-$kat comp -t $t -n -o "$output/${in_basename::-14}" $unitigs $contigs
+$kat comp -t $t -n -m $k -o "$output/${in_basename::-14}" $unitigs $contigs
 
 echo
 echo "============="
