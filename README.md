@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains a simple script that uses both minia and kat to do the following:
+This repository contains a simple script that uses both [Minia](https://github.com/GATB/minia) and [KAT](https://kat.readthedocs.io/en/latest/index.html) to do the following:
 
  * Takes an `unitigs.fa` file as the input
  * Uses [Minia](https://github.com/GATB/minia) to remove the tips
