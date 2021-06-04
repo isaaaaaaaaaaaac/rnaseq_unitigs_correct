@@ -1,4 +1,13 @@
 def print_kmer_data(fname):
+    """
+    This code is not very smart, it just knows exactly at which lines to look
+    for the data we want it to print.
+    If KAT changes the structure of their .stats files, this code will more
+    than likely be broken.
+
+    I wish I could have done it from the .mx file, but some data cannot be retrieved
+    from it, e.g. `total_kmers_1`.
+    """
     with open(fname, 'r') as f:
         lines = f.readlines()
     hash_1 = lines[1].split()[-1].replace('"', '')
