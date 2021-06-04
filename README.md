@@ -27,11 +27,17 @@ The script's parameters are the following ones:
  * `-in`: the input file, an `unitigs.fa` file
  * `-minia`: [Minia](https://github.com/GATB/minia)'s directory
  * `-kat`:  [KAT](https://kat.readthedocs.io/en/latest/index.html)'s executable
- * `-python`: Python's executable. _Default: python3_.
- * `-output`: output directory for KAT's output. _Default: the root of the git repository_.
- * `-t`: the number of threads to use. _Default: 8_.
- * `-k`: the size of the k-mers to be considered by both Minia and KAT.
+ * `-python` _(optional_): Python's executable. _Default: python3_.
+ * `-output` _(optional_): output directory for KAT's output. _Default: the root of the git repository_.
+ * `-t` _(optional_): the number of threads to use. _Default: 8_.
+ * `-k` _(optional_): the size of the k-mers to be considered by both Minia and KAT.
 
 ## Requirements
 
 You will need [Minia](https://github.com/GATB/minia) and [KAT](https://kat.readthedocs.io/en/latest/index.html) for the script to work. You also must have Python installed.
+
+## Context
+
+I have made this project under the supervision of [Rayan Chikhi](https://github.com/rchikhi) from the __Institut Pasteur__ and [Mikaël Salson](https://mikael-salson.univ-lille.fr/?lang=en) from __l'Université de Lille__.
+
+It was a scholar project, a bit troubled by the events of 2020-2021 and therefore less profound that we originally wanted it to be.
