@@ -91,7 +91,7 @@ while test $# -gt 0; do
     esac
 done
 
-if [ -z ${in+x} ] || [ -z ${minia+x}] || [ -z ${kat+x}]; then
+if [ -z ${in+x} ] || [ -z ${minia+x} ] || [ -z ${kat+x} ]; then
     echo
     echo "====================================================="
     echo "INVALID ARGUMENTS. -in, -minia AND -kat ARE MANDATORY"
