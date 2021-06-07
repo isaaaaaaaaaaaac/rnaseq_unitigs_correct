@@ -91,12 +91,6 @@ while test $# -gt 0; do
     esac
 done
 
-in_basename=$(basename $in)
-unitigs=${in::-3}
-gfa_unitigs="${in_basename::-14}.gfa"
-contigs="${in_basename::-14}.contigs.fa"
-gfa_contigs="${in_basename::-14}.contigs.gfa"
-
 if ! test -f "$minia/build/bin/minia"; then
     echo "$minia/build/bin/minia does not exist."
     exit 1
@@ -106,7 +100,39 @@ if ! test -f "$kat"; then
     exit 1
 fi
 
+if [ -z ${in+x} ] || [ -z ${minia+x}] || [ -z ${kat+x}]; then
+    echo
+    echo "====================================================="
+    echo "INVALID ARGUMENTS. -in, -minia AND -kat ARE MANDATORY"
+    echo "====================================================="
+    echo
+    exit 1
+fi
 
+compressed_higher_length=0
+if [ "${in##*.}" == "gz" ]; then
+    compressed_higher_length=3
+
+    gunzip -f -k $in
+
+    if test $? -ne 0; then
+    echo "gunzip failed."
+        exit 1
+    fi
+
+    echo
+    echo "==========="
+    echo "GUNZIP DONE"
+    echo "==========="
+    echo
+fi
+
+
+in_basename=$(basename $in)
+unitigs=${in::0-$compressed_higher_length}
+gfa_unitigs="${in_basename::11-$compressed_higher_length}.gfa"
+contigs="${in_basename::-11-$compressed_higher_length}.contigs.fa"
+gfa_contigs="${in_basename::11-$compressed_higher_length}.contigs.gfa"
 
 if ! test -f "$output"; then
     mkdir $output
@@ -120,18 +146,6 @@ echo
 
 
 
-gunzip -f -k $in
-
-if test $? -ne 0; then
-echo "gunzip failed."
-    exit 1
-fi
-
-echo
-echo "==========="
-echo "GUNZIP DONE"
-echo "==========="
-echo
 
 
 
