@@ -112,6 +112,7 @@ fi
 compressed_higher_length=0
 if [ "${in##*.}" == "gz" ]; then
     compressed_higher_length=3
+    unitigs=${in::-3}
 
     gunzip -f -k $in
 
@@ -125,11 +126,12 @@ if [ "${in##*.}" == "gz" ]; then
     echo "GUNZIP DONE"
     echo "==========="
     echo
+else
+    unitigs=${in}
 fi
 
 
 in_basename=$(basename $in)
-unitigs=${in::0-$compressed_higher_length}
 gfa_unitigs="${in_basename::11-$compressed_higher_length}.gfa"
 contigs="${in_basename::-11-$compressed_higher_length}.contigs.fa"
 gfa_contigs="${in_basename::11-$compressed_higher_length}.contigs.gfa"
@@ -143,9 +145,6 @@ echo "===================================="
 echo "EXECUTABLES & OUTPUT DIRECTORY EXIST"
 echo "===================================="
 echo
-
-
-
 
 
 
