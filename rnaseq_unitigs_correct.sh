@@ -90,14 +90,6 @@ while test $# -gt 0; do
         ;;
     esac
 done
-
-if ! test -f "$minia/build/bin/minia"; then
-    echo "$minia/build/bin/minia does not exist."
-    exit 1
-fi
-if ! test -f "$kat"; then
-    echo "$kat does not exist."
-    exit 1
 fi
 
 if [ -z ${in+x} ] || [ -z ${minia+x}] || [ -z ${kat+x}]; then
@@ -108,6 +100,14 @@ if [ -z ${in+x} ] || [ -z ${minia+x}] || [ -z ${kat+x}]; then
     echo
     exit 1
 fi
+
+if ! test -f "$minia/build/bin/minia"; then
+    echo "$minia/build/bin/minia does not exist."
+    exit 1
+fi
+if ! test -f "$kat"; then
+    echo "$kat does not exist."
+    exit 1
 
 compressed_higher_length=0
 if [ "${in##*.}" == "gz" ]; then
