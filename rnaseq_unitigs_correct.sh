@@ -1,11 +1,12 @@
 #!/bin/bash
 
+# directory of the script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 k=31
 t=8
 python="python3"
-output="$SCRIPT_DIR/../script_output"
+output="$SCRIPT_DIR/script_output"
 
 while test $# -gt 0; do
     case "$1" in
