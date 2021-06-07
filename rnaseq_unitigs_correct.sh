@@ -90,7 +90,6 @@ while test $# -gt 0; do
         ;;
     esac
 done
-fi
 
 if [ -z ${in+x} ] || [ -z ${minia+x}] || [ -z ${kat+x}]; then
     echo
@@ -108,6 +107,7 @@ fi
 if ! test -f "$kat"; then
     echo "$kat does not exist."
     exit 1
+fi
 
 compressed_higher_length=0
 if [ "${in##*.}" == "gz" ]; then
