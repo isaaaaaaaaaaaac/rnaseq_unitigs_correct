@@ -210,7 +210,7 @@ echo
 mkdir $GFA_DIR
 mkdir $CONTIGS_DIR
 mv ./*.gfa $GFA_DIR
-mv ./*contigs* $CONTIGS_DIR
+mv ./*contigs.fa $CONTIGS_DIR
 
 echo
 echo "==========================================="
