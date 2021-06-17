@@ -13,15 +13,17 @@ This repository contains a simple script that uses both [Minia](https://github.c
 
 To install `rnaseq_unitigs_correct`, simply do the following:
 
-    # get a local copy of the repository
-    git clone https://github.com/isaac-nivet/rnaseq_unitigs_correct
-
+```shell
+# get a local copy of the repository
+git clone https://github.com/isaac-nivet/rnaseq_unitigs_correct
+```
 
 The script to run is `./rnaseq_unitigs_correct.sh`. Here is an simple example of a run, from the root of the repository:
-    
-    cd rnaseq_unitigs_correct
-    bash rnaseq_unitigs_correct.sh -in ../SRR066468.unitigs.fa.gz -minia ../minia -kat ../miniconda3/bin/kat -k 31
 
+```shell
+cd rnaseq_unitigs_correct
+bash rnaseq_unitigs_correct.sh -in ../SRR066468.unitigs.fa.gz -minia ../minia -kat ../miniconda3/bin/kat -k 31
+```
 
 The script's parameters are the following ones:
  * `-in`: the input file, an `unitigs.fa` file
