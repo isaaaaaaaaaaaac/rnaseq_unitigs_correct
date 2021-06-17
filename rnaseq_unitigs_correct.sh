@@ -2,6 +2,8 @@
 
 # directory of the script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+GFA_DIR="./gfa_output"
+CONTIGS_DIR="./contigs_output"
 
 k=31
 t=8
@@ -202,6 +204,18 @@ echo
 echo "============="
 echo "KAT COMP DONE"
 echo "============="
+echo
+
+
+mkdir $GFA_DIR
+mkdir $CONTIGS_DIR
+mv ./*.gfa $GFA_DIR
+mv ./*contigs* $CONTIGS_DIR
+
+echo
+echo "==========================================="
+echo "FILES MOVES IN THEIR RESPECTIVE DIRECTORIES"
+echo "==========================================="
 echo
 
 
