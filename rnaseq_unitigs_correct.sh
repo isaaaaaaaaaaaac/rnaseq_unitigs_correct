@@ -132,9 +132,9 @@ fi
 
 
 in_basename=$(basename $in)
-gfa_unitigs="${in_basename::11-$compressed_higher_length}.gfa"
+gfa_unitigs="${in_basename::-11-$compressed_higher_length}.gfa"
 contigs="${in_basename::-11-$compressed_higher_length}.contigs.fa"
-gfa_contigs="${in_basename::11-$compressed_higher_length}.contigs.gfa"
+gfa_contigs="${in_basename::-11-$compressed_higher_length}.contigs.gfa"
 
 if ! test -f "$output"; then
     mkdir $output
